@@ -1,11 +1,11 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Haugen Betongservice",
-  description: "Alt innen betong – Horten og Vestfold",
+  description: "Alt innen betong",
 };
 
 export default function RootLayout({
@@ -20,7 +20,6 @@ export default function RootLayout({
         <main style={{ minHeight: "calc(100vh - 200px)" }}>
           {children}             {/* Her kommer sidene inn automatisk */}
         </main>
-        <Footer />
       </body>
     </html>
   );
