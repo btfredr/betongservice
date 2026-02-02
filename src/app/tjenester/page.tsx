@@ -36,7 +36,7 @@ export default function Tjenester() {
           <h1 className="section-title">Våre tjenester</h1>
           
           <p className="section-intro">
-            Haugen Betongservice leverer solid og pålitelig betongarbeid i Horten og Vestfold. 
+            Haugen Betongservice leverer solid og pålitelig betongarbeid i Vestfold og omegn. 
             Vi tar oss av alt fra små oppdrag til større prosjekter – alltid med fokus på kvalitet, presisjon og ryddig utførelse.
           </p>
 
@@ -54,7 +54,7 @@ export default function Tjenester() {
                   <h3 className="service-title">{service.title}</h3>
                   <p className="service-desc">{service.description}</p>
                   <Link href="/kontakt" className="btn btn-primary service-cta">
-                    Få uforpliktende tilbud
+                    Få et uforpliktende tilbud
                   </Link>
                 </div>
               </div>
