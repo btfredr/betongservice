@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from 'next/image';
 
 const navItems = [
   { label: "Hjem", path: "/" },
@@ -19,9 +20,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-inner container">
-        <Link href="/" className="logo">
-          Haugen Betongservice
-        </Link>
+    <Link href="/" className="logo">
+        Haugen Betongservice
+    </Link>
 
         {/* Desktop */}
         <nav className="nav-desktop">

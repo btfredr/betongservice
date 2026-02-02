@@ -1,5 +1,17 @@
 /* src/app/globals.css */
 
+/* === Variabler – mørkere palett === */
+:root {
+  --bg-dark: #000;         /* nesten svart – perfekt med logo */
+  --bg-medium: #0d0d0d;       /* mørk grå for kort/header */
+  --bg-light: #f3f3f3;        /* lysere mørk for kontrast */
+  --text-primary: #ffffff;    /* hvit for hovedtekst */
+  --text-muted: #cccccc;      /* lys grå for sekundær tekst */
+  --accent: #F1E4E8;          /* orange – beholdt som CTA */
+  --accent-hover: #2B50AA;    /* lysere orange på hover */
+  --border: #333333;          /* mørke kanter */
+}
+
 /* === Reset og base === */
 * {
   margin: 0;
@@ -15,8 +27,8 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: #222;
-  background: #f8f9fa;
+  color: var(--text-muted);
+  background: var(--bg-dark);
 }
 
 a {
@@ -49,7 +61,7 @@ button, a[role="button"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-primary);
   text-align: center;
   overflow: hidden;
   isolation: isolate;
@@ -57,7 +69,7 @@ button, a[role="button"] {
 
 .hero-bg {
   object-fit: cover;
-  filter: brightness(0.65) contrast(1.05);
+  filter: brightness(0.45) contrast(1.1); /* sterkere mørklegging for bedre kontrast */
 }
 
 .hero-content {
@@ -72,13 +84,13 @@ button, a[role="button"] {
   font-size: clamp(2.8rem, 9vw, 5.5rem);
   font-weight: 800;
   margin-bottom: 0.8rem;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.9);
 }
 
 .hero-subtitle {
   font-size: clamp(1.4rem, 5vw, 2.4rem);
   margin-bottom: 2.5rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 /* === CTA-knapper === */
@@ -103,23 +115,23 @@ button, a[role="button"] {
 }
 
 .btn-primary {
-  background-color: #e65c00;
-  color: white;
-  border: none;
+  background-color: var(--accent);
+  color: var(--bg-dark);
 }
 
 .btn-primary:hover {
-  background-color: #c94e00;
+  background-color: var(--accent-hover);
+  color: var(--text-primary);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
 }
 
 .btn-outline:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.15);
 }
 
 @media (min-width: 640px) {
@@ -133,9 +145,9 @@ button, a[role="button"] {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: white;
-  border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  background-color: var(--bg-medium);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .header-inner {
@@ -148,7 +160,7 @@ button, a[role="button"] {
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
 }
 
@@ -161,13 +173,13 @@ button, a[role="button"] {
 .nav-link {
   font-size: 1.05rem;
   font-weight: 500;
-  color: #333;
+  color: var(--text-primary);
   transition: color 0.18s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e65c00;
+  color: var(--accent-hover);
 }
 
 .phone-button {
@@ -175,7 +187,7 @@ button, a[role="button"] {
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.5rem;
-  background-color: #e65c00;
+  background-color: var(--accent);
   color: white;
   font-weight: 600;
   border-radius: 6px;
@@ -183,7 +195,7 @@ button, a[role="button"] {
 }
 
 .phone-button:hover {
-  background-color: #c94e00;
+  background-color: var(--accent-hover);
 }
 
 .hamburger {
@@ -191,7 +203,7 @@ button, a[role="button"] {
   background: none;
   border: none;
   font-size: 2.1rem;
-  color: #444;
+  color: var(--text-muted);
   cursor: pointer;
   padding: 0.5rem;
 }
@@ -203,9 +215,9 @@ button, a[role="button"] {
   top: 70px;
   left: 0;
   right: 0;
-  background-color: white;
-  border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  background-color: var(--bg-medium);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
   padding: 1.5rem 0;
 }
 
@@ -222,21 +234,21 @@ button, a[role="button"] {
 .mobile-nav-link {
   font-size: 1.15rem;
   font-weight: 500;
-  color: #333;
+  color: var(--text-muted);
   padding: 0.9rem 1.75rem;
   transition: background-color 0.18s;
 }
 
 .mobile-nav-link:hover {
-  background-color: #f9f9f9;
-  color: #e65c00;
+  background-color: #2a2a2a;
+  color: var(--accent);
 }
 
 .mobile-phone {
   display: block;
   margin: 1rem 1.75rem 0.5rem;
   padding: 0.9rem;
-  background-color: #e65c00;
+  background-color: var(--accent);
   color: white;
   font-weight: 600;
   text-align: center;
@@ -277,18 +289,16 @@ button, a[role="button"] {
 }
 
 /* === Tjenester-side === */
-
 .section {
   padding: 6rem 0 8rem;
-  background: #f8f9fa;
+  background: var(--bg-medium);
 }
 
 .section-title {
   text-align: center;
   font-size: 3rem;
-  font-weight: 800;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--bg-dark);
 }
 
 .section-intro {
@@ -296,7 +306,7 @@ button, a[role="button"] {
   max-width: 720px;
   margin: 0 auto 4rem;
   font-size: 1.2rem;
-  color: #555;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -319,16 +329,16 @@ button, a[role="button"] {
 }
 
 .service-card {
-  background: white;
+  background: var(--bg-light);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.5);
 }
 
 .service-img-wrapper {
@@ -356,12 +366,12 @@ button, a[role="button"] {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #222;
+  color: var(--text-primary);
 }
 
 .service-desc {
   font-size: 1.05rem;
-  color: #555;
+  color: var(--text-muted);
   margin-bottom: 1.8rem;
   line-height: 1.6;
 }
@@ -373,11 +383,11 @@ button, a[role="button"] {
   padding: 0.85rem;
 }
 
-/* Hjemmeside – ekstra seksjoner */
+/* Hjemmeside – ekstra seksjoner (tilpasset mørkere tema) */
 
 .intro-section {
   padding: 5rem 0 4rem;
-  background: white;
+  background: var(--bg-light);
   text-align: center;
 }
 
@@ -385,20 +395,21 @@ button, a[role="button"] {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
+  color: var(--bg-dark);
 }
 
 .intro-text {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.15rem;
-  color: #444;
+  color: var(--text-muted);
   line-height: 1.7;
+  color: var(--bg-dark);
 }
 
 .services-teaser {
-  background: #f8f9fa;
-  padding: 6rem 0;
+  background: var(--bg-light);
+    padding-bottom: 6rem;
 }
 
 .teaser-grid {
@@ -420,7 +431,7 @@ button, a[role="button"] {
   height: 320px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
 }
 
@@ -435,12 +446,12 @@ button, a[role="button"] {
 .teaser-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 1.5rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 .teaser-overlay h3 {
@@ -451,13 +462,13 @@ button, a[role="button"] {
 
 .teaser-link {
   font-size: 1rem;
-  color: #e65c00;
+  color: var(--accent);
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .teaser-link:hover {
-  color: white;
+  color: var(--accent-hover);
 }
 
 .large-btn {
@@ -467,8 +478,8 @@ button, a[role="button"] {
 
 .cta-section {
   padding: 6rem 0;
-  background: #1a1a1a;
-  color: white;
+  background: var(--bg-dark);
+  color: var(--text-primary);
   text-align: center;
 }
 
@@ -486,11 +497,110 @@ button, a[role="button"] {
 }
 
 .cta-big {
-  background: #e65c00;
+  background: var(--accent);
   padding: 1.2rem 3rem;
   font-size: 1.4rem;
 }
 
 .cta-big:hover {
-  background: #c94e00;
+  background: var(--accent-hover);
+}
+
+/* === Footer === */
+
+.footer {
+  background-color: #1a1a1a;
+  color: #ddd;
+  padding: 4rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-col {
+  max-width: 320px;
+}
+
+.footer-logo {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.footer-text {
+  line-height: 1.6;
+  color: #bbb;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+.footer-links,
+.footer-contact {
+  list-style: none;
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: #bbb;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #e65c00;
+}
+
+.footer-phone {
+  color: #e65c00;
+  font-weight: 600;
+}
+
+.footer-email {
+  color: #e65c00;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.copyright {
+  margin-bottom: 0.5rem;
+}
+
+.footer-privacy {
+  color: #bbb;
+  transition: color 0.2s;
+}
+
+.footer-privacy:hover {
+  color: #e65c00;
 }
